@@ -1,0 +1,14 @@
+ Tudo baseado em OO
+ Design de código: revise seu código buscando eventuais melhorias em como você realizou as relações entre as classes, nomes de variáveis, nomes de métodos, estruturas de repetição
+ Documentação completa: documente os módulos, classes e os métodos públicos de forma adequada; (PEP 257)
+ Use PEP 8 ou Formatadores Lint
+ Type Hints completos
+ 0 alertas e 0 erros de lint
+ Métodos especiais quando fizer sentido (__str__, __repr__, ordenação...)
+ Tratamento claro de exceções: implemente Exceções personalizadas, trazendo mais robustez para seu código;
+ Testes unitários usando unittest (cobertura mínima 80 %).
+ README.md bem estruturado: explique do que se trata o projeto e pontue que você está iniciando seus estudos em programação;
+ Versione o código com cuidado, usando mensagens de commit claras e bem estruturadas;
+ LinkedIn: registre esta sua conquista no LinkedIn fazendo uma postagem com texto breve, explicando o que você aprendeu com o projeto, e adicionando um link para o repositório.
+ Impressione pela excelência!
+
