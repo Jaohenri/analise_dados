@@ -1,6 +1,8 @@
 """This Module contaim the class People to process clients data
 """
 import requests
+
+
 class People:
     """Represents a person in the system.
 
@@ -16,7 +18,7 @@ class People:
         self.gender = self.get_gender()
 
 
-    def get_full_name(self, full_name):
+    def get_full_name(self, full_name, cep=None, phone=None):
         """Format all names in Camel Case and prepositions in lowercase.
 
         Args:
@@ -71,3 +73,4 @@ class People:
         answer = requests.get(url)
         data = answer.json()
         return data.get('gender')
+    
