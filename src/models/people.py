@@ -2,7 +2,7 @@
 """
 import requests
 class People:
-    """Represents a People in the system.
+    """Represents a person in the system.
 
     Returns:
         _type_: _description_
