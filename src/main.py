@@ -1,15 +1,38 @@
-import csv
+"""import csv
 from  models.people import People
-#def read_csv(file_path):
 
-with open("./data/lista_clientes.csv", newline='', encoding='utf-8') as csvfile: #Opening the file as a csvfile with a utf-8 encoding
-    reader = csv.reader(csvfile, delimiter=',', quotechar='"') #using csv.reader to read the file, with "," as a delimiter for data and '"' as a separator for full names, for example, if there is a file in the CSV "JOÃO, 17 years, happy" the reader will consider all in " as one element.
-    for idx, row in enumerate(reader): #traversing every column in the csv file and enumerating them
-        if idx == 0: #As we don't need the line with id = 0, this line ignore the following print if the condition is attended
+with open("./data/lista_clientes.csv", newline='', encoding='utf-8') as csvfile:
+    reader = csv.reader(csvfile, delimiter=',', quotechar='"')
+    for idx, row in enumerate(reader):
+        if idx == 0:
             continue
-        print(idx, ', '.join(row)) #printing the csv file with a id for each line, join to take every element in the list row, and put them in a single string, separating them with ', '
-        people = People(row[0])
-        print(people.full_name)
-        print(people.first_name)
-        print(people.second_name)
-        
+        print(idx, ', '.join(row)) 
+        person = People(row[0])
+        print(person.full_name)
+        print(person.first_name)
+        print(person.second_name)"""
+from src.repo.csv_repo import read_csv_file
+from src.models.people import People
+from src.services.gender_service import set_gender
+import json
+
+for idx, row in enumerate(read_csv_file()):
+    if idx == 0:
+        continue
+    if idx == 1:
+        print(idx, ', '.join(row)) 
+        person = People(row[0])
+        email = People(row[1])
+        data = {
+            'Full name' :person.full_name,
+            'First name':person.first_name,
+            'Second_name':person.second_name,
+            'Gender':person.gender.capitalize()
+        }
+
+        json_string = json.dumps(data, indent=4, ensure_ascii=False)
+
+        print(json_string)
+        """print(person.full_name)
+        print(person.first_name)
+        print(person.second_name)"""
