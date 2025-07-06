@@ -15,6 +15,7 @@ class People:
         self.second_name = self.get_second_name()
         self.gender = self.get_gender()
 
+
     def get_full_name(self, full_name):
         """Format all names in Camel Case and prepositions in lowercase.
 
