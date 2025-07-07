@@ -4,17 +4,20 @@ from src.models.people import People
 from src.models.adress import Address
 from src.models.phone import Phone
 from src.services.gender_service import set_gender
+from src.models.cpf import Cpf
 import json
 
 for idx, row in enumerate(read_csv_file()):
     if idx == 0:
         continue
-    if idx == 1:
+    if idx == 4:
         print(idx, ', '.join(row)) 
         person = People(row[0])
         email = row[1]
         phone = Phone(row[4],row[2])
         interest = row[5]
+        cpf = Cpf(row[3])
+        cpf.validate_cpf()
         adress = Address(row[4])
         adress.consult_by_cep()
         data = {
@@ -25,6 +28,7 @@ for idx, row in enumerate(read_csv_file()):
             'E-mail':email,
             'Telephone':phone.phone,
             'Interest':interest,
+            'Cpf':cpf.cpf,
             'Bairro':adress.bairro,
             'Cidade':adress.cidade,
             'Estado':adress.estado,
@@ -33,6 +37,3 @@ for idx, row in enumerate(read_csv_file()):
         json_string = json.dumps(data, indent=4, ensure_ascii=False)
 
         print(json_string)
-        """print(person.full_name)
-        print(person.first_name)
-        print(person.second_name)"""
