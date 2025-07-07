@@ -89,8 +89,8 @@ python -m src.main
 
 ###  Próximas melhorias
 
-Tratamento de exceções.
-Testes unitários
+- Tratamento de exceções.
+- Testes unitários
 Organizar melhor as responsabilidades de cada módulo e utilizar módulos que não estão sendo utilizados no momento
 Gerar o arquivo Json
 Exibir as informações solicitadas no console
