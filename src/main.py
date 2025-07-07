@@ -20,6 +20,10 @@ for idx, row in enumerate(read_csv_file()):
         cpf.validate_cpf()
         adress = Address(row[4])
         adress.consult_by_cep()
+        if adress.observacoes == None:
+            obs = ''
+        else:
+            obs = adress.observacoes
         data = {
             'Full name' :person.full_name,
             'First name':person.first_name,
@@ -32,6 +36,7 @@ for idx, row in enumerate(read_csv_file()):
             'Bairro':adress.bairro,
             'Cidade':adress.cidade,
             'Estado':adress.estado,
+            'Observations':obs
         }
 
         json_string = json.dumps(data, indent=4, ensure_ascii=False)

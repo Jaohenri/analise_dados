@@ -11,6 +11,7 @@ class Address:
         self.cep_consultado = False
         self.observacoes = self.validate_cep()
         if self.observacoes is None:
+            self.observacoes == '.'
             self.consult_by_cep()
         else:
             self.bairro = None
